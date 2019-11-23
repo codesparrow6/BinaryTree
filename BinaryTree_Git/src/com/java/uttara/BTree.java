@@ -15,6 +15,11 @@ public class BTree {
 		traversal(this.root);
 	}
 	
+	boolean isBST(){
+		int min_value= 10;
+		return isBST(this.root,min_value);
+	}
+	
 	void insert(BTNode root,int data){
 		
 		BTNode node = new BTNode(data);
@@ -67,6 +72,25 @@ public class BTree {
 			
 			if(temp.getRight()!=null)
 				traversal(temp.getRight());
+		}
+	}
+	
+	//check whether given Binary Tree is BST or Not--------------------------------------------------------------------------
+	boolean isBST(BTNode root,int prev){
+		if(null == root){
+			return true;
+		}else{
+			boolean left = isBST(root.getLeft(),prev);
+			if(!left)
+				return left;
+			
+			if(prev > root.getData())
+				return false;
+			
+			prev = root.getData();
+			
+			boolean right = isBST(root.getRight(),prev);
+			return right;
 		}
 	}
 }

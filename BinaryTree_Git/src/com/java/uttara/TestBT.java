@@ -21,6 +21,10 @@ public class TestBT {
 		System.out.println("Traversal output =");
 		b.traversal();
 		
+		//checking for isBST or Not-------------------------------------------------------
+		System.out.println();
+		boolean isBST= b.isBST();
+		System.out.println("isBST ="+isBST);
 		
 	}
 
