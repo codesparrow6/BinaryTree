@@ -19,12 +19,33 @@ public class TestBT {
 		System.out.println("All elements are inserted");
 		
 		System.out.println("Traversal output =");
-		b.traversal();
+		b.traversall();
 		
 		//checking for isBST or Not-------------------------------------------------------
 		System.out.println();
 		boolean isBST= b.isBST();
 		System.out.println("isBST ="+isBST);
+		
+		System.out.println("Recursive Traversal output =");
+		b.traversalRecrs();
+		
+		System.out.println();
+		System.out.println("Print leaf-");
+		b.printLeaf();
+		
+		System.out.println();
+		System.out.println("Print left border-");
+		b.printLeftBorder();
+		
+		System.out.println();
+		System.out.println("Print Right border-");
+		b.printRightBorder();
+		
+		System.out.println();
+		System.out.println("Print the boundry-");
+		b.printBoundry();		
+		
+		
 		
 	}
 
