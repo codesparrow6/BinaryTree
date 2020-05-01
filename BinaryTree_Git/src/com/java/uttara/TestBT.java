@@ -18,7 +18,7 @@ public class TestBT {
 		b.insert(70);
 		System.out.println("All elements are inserted");
 		
-		System.out.println("Traversal output =");
+		System.out.println("Level Order Traversal output =");
 		b.traversall();
 		
 		//checking for isBST or Not-------------------------------------------------------
@@ -26,25 +26,39 @@ public class TestBT {
 		boolean isBST= b.isBST();
 		System.out.println("isBST ="+isBST);
 		
-		System.out.println("Recursive Traversal output =");
+		System.out.println("Recursive Pre-order Traversal output =");
 		b.traversalRecrs();
 		
-		System.out.println();
-		System.out.println("Print leaf-");
+		System.out.println("\nPrint leaf-");
 		b.printLeaf();
 		
-		System.out.println();
-		System.out.println("Print left border-");
+		System.out.println("\nPrint left border-");
 		b.printLeftBorder();
 		
-		System.out.println();
-		System.out.println("Print Right border-");
+		System.out.println("\nPrint Right border-");
 		b.printRightBorder();
 		
-		System.out.println();
-		System.out.println("Print the boundry-");
-		b.printBoundry();		
+		System.out.println("\nPrint the boundry-");
+		b.printBoundry();	
 		
+		int maxVal=b.max();
+		System.out.println("\nMaxValue="+maxVal);
+		
+		//b.delete();                           Deletes the tree so it commented.
+		
+		
+		int size=b.size();
+		System.out.println("Size of Tree="+size);
+		
+		int h=b.height();
+		System.out.println("Height of Tree="+h);
+		
+		BTNode copyTree= b.copy();
+		
+		BTNode mirrorTree=b.mirror();
+		
+		boolean findData = b.find(40);
+		System.out.println("\nSearch for given data in the tree -"+ findData);
 		
 		
 	}
