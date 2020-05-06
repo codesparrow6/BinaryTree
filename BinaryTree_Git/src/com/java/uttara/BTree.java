@@ -84,6 +84,10 @@ public class BTree {
 		return find(this.root,data);
 		
 	}
+    
+    boolean printAncestors(int data) {
+    	return printAncestors(this.root,data);
+    }
 	//--------------------------------------------------------------------------------------
 	
 	void insert(BTNode root,int data){
@@ -373,8 +377,27 @@ public class BTree {
 	
 	
 	//Print Ancestors-------------------------------------------------------------------
-	boolean printAncestors(BTNode node) {
-		
+	boolean printAncestors(BTNode node,int data) {
+		if(null==node)
+			return false;
+		else if(data==node.getData())
+			return true;
+		else {
+			boolean left = printAncestors(node.getLeft(), data);
+			if(left) {
+				System.out.println(node.getData());
+				return true;
+			}
+			
+			boolean right=printAncestors(node.getRight(), data);
+			if(right) {
+				System.out.println(node.getData());
+			}
+			return right;
+		}
 	}
+	
+	//Two trees are identical-----------------------------------------------------------
+	
 	
 }

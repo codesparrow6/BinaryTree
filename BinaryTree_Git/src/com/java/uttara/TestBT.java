@@ -60,6 +60,9 @@ public class TestBT {
 		boolean findData = b.find(40);
 		System.out.println("\nSearch for given data in the tree -"+ findData);
 		
+		System.out.println("\nPrint Ancestors-----------");
+		boolean ancestors = b.printAncestors(40);
+		
 		
 	}
 
