@@ -63,7 +63,11 @@ public class TestBT {
 		System.out.println("\nPrint Ancestors-----------");
 		boolean ancestors = b.printAncestors(40);
 		
-		
+		System.out.println("\nFind the level -------");
+		int level = b.level(70);
+		System.out.println("Level="+level);
+		int level_dup = b.level(710,0);
+		System.out.println("level_dup ="+level_dup);
 	}
 
 }

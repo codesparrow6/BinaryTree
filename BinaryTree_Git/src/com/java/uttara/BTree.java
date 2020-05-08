@@ -88,6 +88,14 @@ public class BTree {
     boolean printAncestors(int data) {
     	return printAncestors(this.root,data);
     }
+    
+    int level(int data) {
+    	return level(this.root,data);
+    }
+    
+    int level(int data,int level) {
+    	return level(this.root,data,level);
+    }
 	//--------------------------------------------------------------------------------------
 	
 	void insert(BTNode root,int data){
@@ -397,7 +405,51 @@ public class BTree {
 		}
 	}
 	
+	//Find the level of given node-------------------------------------------------------
+	int level(BTNode node,int data) {
+		if(null==node)
+			return -1;
+		else {
+			if(node.getData()==data)
+				return 0;
+			
+			int left = level(node.getLeft(),data);
+			if(left!=-1)
+				return (left+1);
+			
+			int right = level(node.getRight(),data);
+			if(right!=-1)
+				return right+1;
+			
+			return -1;
+		}
+	}
+	
+	//Another approach to find level of a node-------------------------------------------
+	int level(BTNode node,int data,int level) {
+		if(node == null)
+			return -1;
+		else {
+			
+			if(node.getData()==data)
+				return level;
+			
+			int left = level(node.getLeft(),data,level+1);
+			if(left!=-1)
+				return left;
+			
+			int right= level(node.getRight(),data,level+1);
+			return right;
+		}
+	}
+	
+	
+	
 	//Two trees are identical-----------------------------------------------------------
+	boolean equals(BTNode root1,BTNode root2) {
+		
+		return false;
+	}
 	
 	
 }
